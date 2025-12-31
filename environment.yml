@@ -1,0 +1,55 @@
+name: alzheimers-detection
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python version
+  - python=3.10
+  
+  # Core data science
+  - numpy>=1.24.0
+  - pandas>=2.0.0
+  - scipy>=1.11.0
+  
+  # Machine Learning
+  - scikit-learn>=1.3.0
+  - xgboost>=2.0.0
+  
+  # Deep Learning (PyTorch)
+  - pytorch>=2.0.0
+  - torchvision>=0.15.0
+  - cpuonly  # Remove this line if using GPU
+  
+  # Visualization
+  - matplotlib>=3.7.0
+  - seaborn>=0.12.0
+  
+  # Explainability
+  - shap>=0.43.0
+  
+  # Survival Analysis
+  - lifelines>=0.27.0
+  
+  # Jupyter Support
+  - jupyter>=1.0.0
+  - ipykernel>=6.25.0
+  - notebook>=7.0.0
+  
+  # Utilities
+  - tqdm>=4.65.0
+  - python-dateutil>=2.8.0
+  - pyyaml>=6.0
+  
+  # Pip-only packages
+  - pip
+  - pip:
+    - bed-reader>=0.2.0  # Genetic data (PLINK format)
+    - openpyxl>=3.1.0    # Excel support
+
+# Environment setup instructions:
+# 1. Install Miniconda/Anaconda
+# 2. Run: conda env create -f environment.yml
+# 3. Activate: conda activate alzheimers-detection
+# 4. Verify: python -c "import torch; import xgboost; print('Setup complete!')"
